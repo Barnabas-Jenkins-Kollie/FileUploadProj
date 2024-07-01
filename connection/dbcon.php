@@ -6,7 +6,6 @@ define("DBUSER", "root");
 
 $dbcon = new mysqli(DBHOST, DBUSER, DBPASS, DBNAME);
 if ($dbcon) {
-    echo "db connected";
 } else {
     echo "db fail";
 

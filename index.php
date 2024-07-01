@@ -1,5 +1,6 @@
 <?php
 require_once ("connection/dbcon.php");
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -14,9 +15,9 @@ require_once ("connection/dbcon.php");
 
 <body>
     <div class="container">
-        <h1>upload Document</h1>
+        <h1>Upload Image Only</h1>
         <div>
-            <form class="col col-md-6" action="upload.php" method="post" enctype="multipart/form-data">
+            <form class="col col-sm-12 col-md-12" action="upload.php" method="post" enctype="multipart/form-data">
                 <input class="form-control mt-4" type="text" name="fullname" id="" placeholder="full name"><br>
                 <input class="form-control mt-2" type="file" name="image" id="" value="upload image"><br>
                 <input class="btn btn-lg btn-block btn-secondary    col-md-12" type="submit" value="Upload"
