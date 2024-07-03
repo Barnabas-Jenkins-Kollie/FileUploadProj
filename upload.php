@@ -36,8 +36,10 @@ if (isset($_POST["submit"])) {
                     echo "<script>location.href = 'users_profile.php'</script>";
                 }
 
-
             }
+        } elseif (!in_array($fileextention, $allowImgType)) {
+            echo "<script>alert('This file type is not needed! image only')</script>";
+            echo "<script>location.href ='index.php'</script>";
         }
     }
 

@@ -15,7 +15,7 @@ require_once ("connection/dbcon.php");
 
 <body>
     <div class="container">
-        <h1>Upload Image Only</h1>
+        <h1 class="text-center">Upload Image Only</h1>
         <div>
             <form class="col col-sm-12 col-md-12" action="upload.php" method="post" enctype="multipart/form-data">
                 <input class="form-control mt-4" type="text" name="fullname" id="" placeholder="full name"><br>
