@@ -20,23 +20,48 @@
     <link rel="stylesheet" href="style.css">
     <title>Document</title>
 </head>
-<div class="card mb-3" style="max-width: 540px;">
-    <div class="row g-0">
-        <div class="col-md-4">
-            <img src="$i" class="img-fluid rounded-start" alt="...">
-        </div>
-        <div class="col-md-8">
-            <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional
-                    content. This content is a little bit longer.</p>
-                <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-            </div>
-        </div>
-    </div>
-</div>
 
 <body>
+    <?php
+    require_once ("connection/dbcon.php");
+    $sql = "SELECT * FROM user_uploads";
+    $result = mysqli_query($dbcon, $sql);
+
+    while ($row = mysqli_fetch_array($result)) {
+        $fullname = $row["FULLNAME"];
+        $image = $row["image"];
+        $imageUrl = "uploads/$image";
+        $registration_date = $row["SUBMISSION_DATE"];
+        ?>
+        <div class="container">
+            <div class="card mb-3" style="max-width: 540px;">
+                <div class="row g-0">
+                    <div class="col-md-4">
+                        <img src="<?php echo $imageUrl ?>" class=" img-fluid rounded-start" alt="...">
+                    </div>
+                    <div class="col-md-8">
+                        <div class="card-body">
+                            <h5 class="card-title">
+                                <?php echo $fullname ?>
+                            </h5>
+                            <p class="card-text">This is a wider card with supporting text below as a natural
+                                lead-in to
+                                additional
+                                content. This content is a little bit longer.</p>
+                            <p class="card-text"><small class="text-muted">
+                                    uploaded: <?php echo $registration_date ?>
+                                </small>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <?php
+    }
+
+    ?>
+
 </body>
 
 </html>
